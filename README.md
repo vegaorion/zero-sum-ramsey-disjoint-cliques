@@ -4,7 +4,7 @@ Formulas, DRAT certificates and scripts supporting
 
 > *Zero-sum Ramsey numbers of disjoint cliques modulo 3 and a counterexample to a
 > conjecture of Caro and Provstgaard*, Utkarsh Singh, arXiv:XXXX.XXXXX.
-> Archived at [doi:10.5281/zenodo.XXXXXXX](https://doi.org/10.5281/zenodo.XXXXXXX).
+> Archived at [doi:10.5281/zenodo.22847270](https://doi.org/10.5281/zenodo.22847270).
 
 `R(H, Z_3)` is the least `N` such that every colouring `c : E(K_N) -> Z_3`
 admits a copy of `H` whose edge colours sum to zero. This repository supports
