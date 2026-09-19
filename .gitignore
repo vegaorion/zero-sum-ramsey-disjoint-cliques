@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+*.tmp
+test.cnf
+.DS_Store
+.vscode/
