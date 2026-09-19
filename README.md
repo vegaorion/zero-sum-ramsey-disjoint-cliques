@@ -3,7 +3,7 @@
 Formulas, DRAT certificates and scripts supporting
 
 > *Zero-sum Ramsey numbers of disjoint cliques modulo 3 and a counterexample to a
-> conjecture of Caro and Provstgaard*, FIRSTNAME LASTNAME, arXiv:XXXX.XXXXX.
+> conjecture of Caro and Provstgaard*, Utkarsh Singh, arXiv:XXXX.XXXXX.
 > Archived at [doi:10.5281/zenodo.XXXXXXX](https://doi.org/10.5281/zenodo.XXXXXXX).
 
 `R(H, Z_3)` is the least `N` such that every colouring `c : E(K_N) -> Z_3`
@@ -115,7 +115,7 @@ exactly when the partial sum is `a` does so.
 
 ## Environment
 
-CaDiCaL VERSION, drat-trim COMMIT, Python VERSION, on CPU / RAM / OS.
+CaDiCaL 3.0.1, drat-trim 2e3b2dc, Python 3.13.15, on Google Colab (x86-64 Linux).
 Solver and checker output is in `logs/`.
 
 ## License
