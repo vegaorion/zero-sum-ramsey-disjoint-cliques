@@ -1,0 +1,104 @@
+c --- [ banner ] -------------------------------------------------------------
+c 
+c CaDiCaL SAT Solver
+c Copyright (c) 2016-2026
+c A. Biere, M. Fleury, N. Froleyks, K. Fazekas, F. Pollitt, T. Faller
+c JKU Linz, University of Freiburg, TU Wien
+c 
+c Version 3.0.1 c60730422e758ef1cebe7aeddf2dda31c996bf04
+c g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0 -Wall -Wextra -O3 -DNDEBUG
+c Sat Sep 19 01:48:17 PM UTC 2026 Linux b92df19386bc 6.6.122+ x86_64
+c 
+c --- [ parsing input ] ------------------------------------------------------
+c 
+c reading DIMACS file from '/content/repo/cnf/K7_2K3.cnf'
+c opening file to read '/content/repo/cnf/K7_2K3.cnf'
+c found 'p cnf 273 994' header
+c parsed 994 clauses in 0.00 seconds process time
+c 
+c --- [ options ] ------------------------------------------------------------
+c 
+c all options are set to their default value
+c 
+c --- [ solving ] ------------------------------------------------------------
+c 
+c time measured in process time since initialization
+c 
+c  seconds  reduction conflicts       size tier2     variables
+c         MB    restarts   redundant    glue  trail      remaining
+c          level     rate       size/glu tier1 irredundant
+c 
+c *  0.00  4  0 0   0  0    0    0 0.0 0 0 2 6  0%  994 273 100%
+c l  0.00  5  0 0   0  0    0    0 0.0 0 0 2 6  0%  994 273 100%
+c 1  0.00  5  0 0   0  0    0    0 0.0 0 0 2 6  0%  994 273 100%
+c 
+c --- [ result ] -------------------------------------------------------------
+c 
+s SATISFIABLE
+v -1 -2 3 -4 -5 6 -7 -8 9 -10 -11 12 -13 -14 15 -16 -17 18 -19 -20 21 -22 -23
+v 24 -25 -26 27 -28 -29 30 -31 -32 33 -34 -35 36 -37 -38 39 -40 -41 42 -43 -44
+v 45 -46 47 -48 -49 50 -51 52 -53 -54 55 -56 -57 -58 59 -60 -61 62 -63 -64 65
+v -66 67 -68 -69 -70 71 -72 73 -74 -75 -76 77 -78 79 -80 -81 -82 83 -84 85 -86
+v -87 -88 89 -90 91 -92 -93 -94 95 -96 97 -98 -99 -100 101 -102 103 -104 -105
+v -106 107 -108 109 -110 -111 -112 113 -114 115 -116 -117 -118 119 -120 -121
+v -122 123 -124 125 -126 -127 -128 129 -130 131 -132 -133 134 -135 -136 137
+v -138 -139 140 -141 -142 143 -144 -145 -146 147 -148 149 -150 -151 -152 153
+v -154 155 -156 157 -158 -159 -160 161 -162 163 -164 -165 -166 167 -168 169
+v -170 -171 -172 173 -174 175 -176 -177 -178 179 -180 -181 -182 183 -184 185
+v -186 -187 -188 189 -190 191 -192 -193 194 -195 -196 197 -198 -199 200 -201
+v -202 203 -204 -205 -206 207 -208 209 -210 -211 -212 213 -214 215 -216 -217
+v -218 219 -220 221 -222 -223 -224 225 -226 227 -228 -229 230 -231 -232 233
+v -234 -235 236 -237 -238 239 -240 -241 -242 243 -244 245 -246 -247 -248 249
+v -250 -251 252 -253 -254 255 -256 257 -258 -259 -260 261 -262 263 -264 -265
+v -266 267 -268 269 -270 -271 -272 273 0
+c 
+c --- [ run-time profiling ] -------------------------------------------------
+c 
+c process time taken by individual solving procedures
+c (percentage relative to process time for solving)
+c 
+c         0.00  211.23% parse
+c         0.00   45.65% search
+c         0.00   44.93% lucky
+c         0.00    0.00% simplify
+c   =================================
+c         0.00   25.02% solve
+c 
+c last line shows process time for solving
+c (percentage relative to total process time)
+c 
+c --- [ statistics ] ---------------------------------------------------------
+c 
+c lucky:                         1       100.00 %  of tried
+c minimized:                     0         0.00 %  learned literals
+c shrunken:                      0         0.00 %  learned literals
+c minishrunken:                  0         0.00 %  learned literals
+c propagations:                  0         0.00 M  per second
+c ticks:                         0         0.00    propagation
+c 
+c seconds are measured in process time for solving
+c 
+c --- [ glue usage ] ---------------------------------------------------------
+c 
+c focused glue 2 used 0 clauses 0.000% accumulated 0.000% tier1
+c focused glue 3 used 0 clauses 0.000% accumulated 0.000%
+c focused glue 4 used 0 clauses 0.000% accumulated 0.000%
+c focused glue 5 used 0 clauses 0.000% accumulated 0.000%
+c focused glue 6 used 0 clauses 0.000% accumulated 0.000% tier2
+c 
+c stable glue 2 used 0 clauses 0.000% accumulated 0.000% tier1
+c stable glue 3 used 0 clauses 0.000% accumulated 0.000%
+c stable glue 4 used 0 clauses 0.000% accumulated 0.000%
+c stable glue 5 used 0 clauses 0.000% accumulated 0.000%
+c stable glue 6 used 0 clauses 0.000% accumulated 0.000% tier2
+c 
+c 
+c --- [ resources ] ----------------------------------------------------------
+c 
+c total process time since initialization:         0.00    seconds
+c total real time since initialization:            0.00    seconds
+c maximum resident set size of process:           12.75    MB
+c 
+c --- [ shutting down ] ------------------------------------------------------
+c 
+c exit 10
