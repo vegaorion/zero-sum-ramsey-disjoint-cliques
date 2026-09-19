@@ -26,46 +26,60 @@ that value does not depend on Lemma 2.2 either.
 ## Contents
 
 ```
+run_all.py       runs every check and prints a summary
+make_cnf.py      regenerates all seven formulas
 src/encode.py    builds Phi(N, sK_r)
 src/counts.py    evaluates equation (5.1); does not import the encoder
 src/check.py     independent decoder and checker
 cnf/             the seven formulas
 proofs/          DRAT certificates for the three UNSAT instances
 logs/            solver and checker output
+Makefile         the same targets, for anyone who prefers make
 ```
 
 ## Verify
 
+Only Python 3 is needed for steps 1, 2 and 4; step 3 also needs
+[drat-trim](https://github.com/marijnheule/drat-trim).
+
 ```sh
-make verify     # replay the three DRAT proofs with drat-trim   (~1 min)
-make counts     # check every clause count against equation (5.1)
-make encoder    # check the encoder admits known avoiding colourings
-make check      # all three
-make cnf        # regenerate every formula from scratch
-make solve      # re-solve and re-emit the proofs
+python3 run_all.py
 ```
 
-`make verify` needs only `drat-trim` and is sufficient to confirm the three
-values. `sha256sum -c SHA256SUMS` checks file integrity.
+That runs, in order:
+
+1. **Clause counts** — every CNF file against equation (5.1) of the paper.
+2. **Encoder validation** — the magic `K_4` really does avoid zero-sum copies.
+3. **Proof replay** — `drat-trim` on the three certificates.
+4. **Checksums** — regenerates `SHA256SUMS`.
+
+Steps that cannot run are reported as SKIPPED rather than failing, so the script
+is safe to run at any stage. `python3 make_cnf.py` regenerates the formulas from
+scratch; the two `K_13` files take about a minute each.
+
+Equivalent `make` targets are `make counts`, `make encoder`, `make verify`,
+`make sums`, `make cnf`.
 
 ## What the certificates cover, and what they do not
 
 The DRAT proofs remove any need to trust the **solver**. They do not cover the
-**encoder**. Three checks address that, in increasing strength:
+**encoder**. Three checks address that, in increasing strength.
 
-1. `make counts` evaluates the closed forms of equation (5.1) and compares them
-   against the `p cnf` header of every shipped file. `src/counts.py` does not
-   import `src/encode.py`, so an under-constrained encoding — a missing family
-   of copies, say — appears here as a mismatch.
-2. `make encoder` checks that the magic `K_4` of Construction 1.14, proved
+1. `src/counts.py` evaluates the closed forms of equation (5.1) and compares
+   them against the `p cnf` header of every shipped file. It does not import
+   `src/encode.py`, so an under-constrained encoding — a missing family of
+   copies, say — appears here as a mismatch.
+2. `src/check.py` verifies that the magic `K_4` of Construction 1.14, proved
    avoiding by hand in Lemma 3.1, really is avoiding on `K_7`, `K_9` and
-   `K_12`. `src/check.py` enumerates copies by a different method from the
-   encoder (ordered tuples deduplicated by canonical form, rather than
-   increasing minima) and compares the count it reaches against the closed
-   form, so a silently incomplete enumeration cannot pass.
+   `K_12`. It enumerates copies by a different method from the encoder (ordered
+   tuples deduplicated by canonical form, rather than increasing minima) and
+   compares the count it reaches against the closed form, so a silently
+   incomplete enumeration cannot pass. It is also run on `K_8` as a negative
+   control, where `R(2K_3) = 8` means a zero-sum copy must exist: a checker that
+   never reports failure proves nothing.
 3. The same colouring must therefore satisfy `cnf/K7_2K3.cnf`,
-   `cnf/K9_2K4.cnf` and `cnf/K12_3K4.cnf`, which are satisfiable; decoding
-   their models with `src/check.py --model` closes the loop.
+   `cnf/K9_2K4.cnf` and `cnf/K12_3K4.cnf`, which are satisfiable; decoding their
+   models with `python3 src/check.py --model` closes the loop.
 
 Only the variable numbering is shared between `check.py` and the encoder, which
 is unavoidable — something has to read the model. It is re-derived in
@@ -102,4 +116,5 @@ Solver and checker output is in `logs/`.
 
 ## License
 
-MIT for `src/`, CC-BY-4.0 for `cnf/`, `proofs/` and `logs/`. See `LICENSE`.
+MIT for `src/`, `run_all.py` and `make_cnf.py`; CC-BY-4.0 for `cnf/`, `proofs/`
+and `logs/`. See `LICENSE`.
