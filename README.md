@@ -35,6 +35,10 @@ cnf/             the seven formulas
 proofs/          DRAT certificates for the three UNSAT instances
 logs/            solver and checker output
 Makefile         the same targets, for anyone who prefers make
+Three of the four DRAT certificates are in `proofs/`. The fourth,
+`K13_3K4_none.drat`, is too large for GitHub and is in the Zenodo archive
+only; see `proofs/README.md`. It is regenerable in about 35 minutes with
+`make_cnf.py` and CaDiCaL.
 ```
 
 ## Verify
