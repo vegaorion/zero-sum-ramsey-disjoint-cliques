@@ -73,7 +73,7 @@ The DRAT proofs remove any need to trust the **solver**. They do not cover the
    them against the `p cnf` header of every shipped file. It does not import
    `src/encode.py`, so an under-constrained encoding — a missing family of
    copies, say — appears here as a mismatch.
-2. `src/check.py` verifies that the magic `K_4` of Construction 1.14, proved
+2. `src/check.py` verifies that the magic `K_4` of Construction 1.10, proved
    avoiding by hand in Lemma 3.1, really is avoiding on `K_7`, `K_9` and
    `K_12`. It enumerates copies by a different method from the encoder (ordered
    tuples deduplicated by canonical form, rather than increasing minima) and
