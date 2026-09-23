@@ -19,10 +19,7 @@ three values:
 The third refutes Conjecture 1 of Caro and Provstgaard, *J. Graph Theory* **32**
 (1999) 207–216, which predicts `t(n+d) - d = 14`.
 
-The matching lower bounds are proved by hand in the paper and depend on no
-computation. `K13_3K4_none.cnf` is the unreduced form of the third instance, so
-that value does not depend on Lemma 2.2 either.
-
+The certified proofs for R(2K_4) and R(3K_4) use gauge fixing (Lemma 2.2 of the paper, a one-line argument). The unreduced formula K13_3K4_none.cnf is included so that anyone can confirm R(3K₄) = 13 without that lemma.
 ## Contents
 
 ```
@@ -35,10 +32,7 @@ cnf/             the seven formulas
 proofs/          DRAT certificates for the three UNSAT instances
 logs/            solver and checker output
 Makefile         the same targets, for anyone who prefers make
-Three of the four DRAT certificates are in `proofs/`. The fourth,
-`K13_3K4_none.drat`, is too large for GitHub and is in the Zenodo archive
-only; see `proofs/README.md`. It is regenerable in about 35 minutes with
-`make_cnf.py` and CaDiCaL.
+proofs/ holds the DRAT certificates for the three UNSAT instances in the paper. cnf/K13_3K4_none.cnf is the unreduced form of the K₁₃ instance; it was also solved and its proof checked (see Remark 5.2(e) of the paper), but that proof is not shipped because of its size (414 MB). It can be regenerated in about 40 minutes with make_cnf.py and CaDiCaL.
 ```
 
 ## Verify
