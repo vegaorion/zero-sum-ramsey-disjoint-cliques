@@ -1,0 +1,47 @@
+cff-version: 1.2.0
+message: >-
+  If you use these formulas, certificates or scripts, please cite the
+  paper below, and optionally this software/data archive.
+type: software
+title: >-
+  Data and certificates for "Zero-sum Ramsey numbers of disjoint cliques
+  modulo 3 and a counterexample to a conjecture of Caro and Provstgaard"
+abstract: >-
+  CNF formulas, DRAT certificates, logs and verification scripts
+  establishing R(2K_3,Z_3) = 8, R(2K_4,Z_3) = 10 and R(3K_4,Z_3) = 13.
+  The last refutes Conjecture 1 of Caro and Provstgaard (J. Graph Theory
+  32 (1999) 207-216).
+authors:
+  - family-names: Singh
+    given-names: Utkarsh
+    affiliation: Independent researcher, Delhi, India
+    email: vegaorion26@gmail.com
+     orcid: "https://orcid.org/0009-0004-1587-5894"
+version: "1.1"
+date-released: "2026-09-23"
+doi: 10.5281/zenodo.22847270
+repository-code: "https://github.com/vegaorion/zero-sum-ramsey-disjoint-cliques"
+license:
+  - MIT
+  - CC-BY-4.0
+keywords:
+  - zero-sum Ramsey number
+  - edge colouring
+  - SAT
+  - DRAT
+  - combinatorics
+preferred-citation:
+  type: article
+  title: >-
+    Zero-sum Ramsey numbers of disjoint cliques modulo 3 and a
+    counterexample to a conjecture of Caro and Provstgaard
+  authors:
+    - family-names: Singh
+      given-names: Utkarsh
+  year: 2026
+  # After arXiv posting, uncomment and fill in:
+  # identifiers:
+  #   - type: other
+  #     value: "arXiv:YYMM.NNNNN"
+  #     description: arXiv preprint
+  # url: "https://arxiv.org/abs/YYMM.NNNNN"
